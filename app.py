@@ -12,7 +12,10 @@ app = Flask(__name__, static_folder=frontend_dir, static_url_path='/')
 app.config.from_object(Config)
 
 # Enable CORS
-CORS(app, origins=["http://localhost:3000"])
+CORS(app, origins=[
+    "http://localhost:3000",  # Local testing
+    "https://zealous-dune-0d793e30f6.azurestaticapps.net"  # Deployed frontend
+])
 
 # Init DB & Login
 db.init_app(app)
