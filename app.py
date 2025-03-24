@@ -56,4 +56,6 @@ def serve_react_app(path):
         return send_from_directory(frontend_dir, 'index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    with app.app_context():
+        db.create_all()   # Ensures your tables are created
+    app.run(host='0.0.0.0', port=8000)

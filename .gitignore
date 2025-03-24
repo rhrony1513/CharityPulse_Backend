@@ -12,3 +12,6 @@ build/
 
 # MacOS
 .DS_Store
+
+# SSl DigiCert
+.pem
