@@ -1,4 +1,4 @@
-import os
+import os 
 from flask import Flask, send_from_directory, abort, jsonify
 from config import Config
 from models import db
@@ -55,7 +55,13 @@ def serve_react_app(path):
     else:
         return send_from_directory(frontend_dir, 'index.html')
 
+# Create tables on app start
+@app.before_first_request
+def create_tables():
+    db.create_all()
+
+# Main entry point (used for local testing only — not used in production)
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()   # Ensures your tables are created
+        db.create_all()
     app.run(host='0.0.0.0', port=8000)

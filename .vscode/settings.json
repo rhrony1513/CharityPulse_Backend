@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/4367f38e-246f-4adf-af23-7ff7c690e767/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/CharityPulseBackend",
-    "appService.deploySubpath": "."
-}
